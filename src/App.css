@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Quicksand:wght@300..700&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+:root {
+  --bg-light: #f8f9fa;
+  --bg-dark: #181256;
+  --text-dark: #212529;
+  --gray-50: #f8f9fa;   /* Background */
+  --gray-100: #e9ecef;  /* Borders */
+  --gray-200: #dee2e6;  /* Inputs */
+  --gray-300: #ced4da;
+}
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  min-height: 100vh;
+  width: 100%;
+}
+main {
+  padding: 15px;}
+/* Start Search form */
+.serch-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.serch-form form  {
+  width: 50%;
+  min-width: 370px;
+  display: flex;
+  padding: 8px;
+}
+.serch-form input, 
+.serch-form button {
+  margin: 0;
+  background: none;
+  color: var(--text-dark);
+  border: 1px solid var(--gray-100);
+  padding: 15px 10px;
+  background-color: var(--bg-light);
+}
+.serch-form input {
+  flex: 1;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  border-right: 0;
+}
+.serch-form input:focus {
+  outline: none;
+}
+.serch-form button {
+  cursor: pointer;
+  width: 50px;
+  border-top-right-radius: 4px;
+  border-left: 0;
+  border-bottom-right-radius: 4px;
+}
+/* End Search form */
+/* Start Mosies Container */
+.movies-container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+  color: var(--text-dark);
+}
+.movies-container .movie-card {
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--bg-light);
+  box-shadow: 0 1px 7px 0 rgba(230, 216, 216, 0.5);
+}
+.movie-card .poster {
+  height: 230px;
+  overflow: hidden; 
+  border-radius: 6px;
+}
+.movie-card .poster img{
+  height: 100%;
+  width: 100%;
+}
+.movie-card .title {
+  margin: 15px 0 10px;
+}
+.movie-card .movie-info > div {
+  display: flex;
+  justify-content: space-between;
+
+}
+.movie-card .show-more-btn {
+  border: none;
+  background-color: var(--bg-light);
+  color: rgb(1, 1, 67);
+  font-size: 16px;
+  display: block;
+  margin: auto;
+  position: relative;
+  transition: .3s;
+  cursor: pointer;
+}
+.movie-card .show-more-btn:hover::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: rgb(1, 1, 67);
+  bottom: 0;
+  left: 0;
+}
+/* End Mosies Container */
+/* End Movie Details */
+.movie-details {
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+@media (max-width: 600px) {
+  .movie-details {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+.movie-details .poster {
+  width: 280px;
+  height: 390px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .movie-details .poster {
+    width: 70%;
+    height: 390px;
+  }
+}
+@media (max-width: 400px) {
+  .movie-details .poster {
+    display: none;
+  }
+}
+.movie-details .poster img {
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+}
+.movie-details .details {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+.movie-details .details span {
+  font-weight: 600;
+}
+.remove-details-card {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  color: rgb(176, 19, 19);
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Strat Movie Details */
+
+div.message {
+  background-color: rgb(229, 190, 190);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  color: rgb(134, 24, 24);
+  bottom: -70px;
+}
+.message .icon {
+  align-self: flex-end;
+  font-size: 20px;
+  cursor: pointer;
+}
+.message .message {
+  margin: 0 10px 0;
+}
