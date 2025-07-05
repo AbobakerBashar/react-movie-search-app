@@ -14,7 +14,7 @@ function App() {
   const getMovieDetails = async imdbId => {
     try {
       const API_KEY = import.meta.env.VITE_MOVIE_APIKEY
-      const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbId}`)
+      const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbId}`)
       const data = await response.data
       if (response.data.Error)
         throw new Error(response.data.Error)

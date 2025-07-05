@@ -17,7 +17,7 @@ export default function SearchBar({setMovies}) {
     try {
       setIsLoading(true)
       const API_KEY=import.meta.env.VITE_MOVIE_APIKEY
-      const response = await axios.get(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
+      const response = await axios.get(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`)
       const data = await response.data.Search
       // set movie data
       const movies = data.map(movie => (
